@@ -3,7 +3,9 @@ pipeline{
 stages{
 stage('Checkout') {
     steps{
-      checkout scm
+        script{
+            checkout scm
+        }
      }
     }
 stage('Install dependencies') {
@@ -19,11 +21,13 @@ stage('Install dependencies') {
       }
    stage('Environment') {
        steps{
+           script{
             sh 'git --version'
             echo "Branch: ${env.BRANCH_NAME}"
             sh 'docker -v'
             sh 'printenv'
+           }
        }
      }
-    }
-}
+  }
+ }
