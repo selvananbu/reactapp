@@ -13,9 +13,10 @@ stage('Install dependencies') {
                withEnv(["DOCKER=${dockerTool}/bin"]) {
                 //stages
                 //here we can trigger: sh "sudo ${DOCKER}/docker ..."
-                }
+                } 
             }
         }
       }
+
     }
 }
